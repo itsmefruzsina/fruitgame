@@ -1,0 +1,277 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+  
+.background {
+    height: 100%; 
+    width: 100%;
+    position: absolute;
+    background-repeat: repeat;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+}
+
+.pool {
+    height: 33%; 
+    width: 100%;
+    position: absolute;
+    top: 67%;
+    left: 0px;
+    z-index: 1;
+}
+
+.fruits {
+    width: 100%;
+    position: absolute;
+    top: 67%;
+    left: 0px;
+    z-index: 2;
+    width: 70%;
+    margin: 50px 15% 0 15%;
+    justify-content: center;
+}
+
+
+.fruits-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.fruits-col{
+    flex-basis: auto;
+    margin: 20px;
+    padding: 20px;
+    height: 200px;
+    width: 200px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fruits img{
+    display: block; 
+    max-width: 100%; 
+    max-height: 100%;
+    padding: 10px;
+    border: none
+}
+
+.screen {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    left: 0px;
+    z-index: 1;
+    width: 90%;
+    margin: 50px 5% 0 5%;
+    justify-content: center;
+}
+
+.screen-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.screen-col {
+    flex-basis: auto;
+    margin: 30px;
+    padding: 20px;
+    width: 500px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1; 
+}
+
+.screen img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 10px;
+}
+
+.click {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    left: 0px;
+    z-index: 11;
+    width: 90%;
+    margin: 50px 5% 0 5%;
+    justify-content: center;
+}
+
+.click-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.click-col {
+    flex-basis: auto;
+    margin: 30px;
+    padding: 20px;
+    width: 500px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 11; 
+}
+
+.click img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 10px;
+}
+
+.transparent {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    left: 0px;
+    z-index: 5;
+    width: 90%;
+    margin: 50px 5% 0 5%;
+    justify-content: center;
+}
+
+.transparent-row {
+    display: flex;
+    margin-top: 150px;
+    justify-content: space-between;
+}
+
+.transparent-col {
+    flex-basis: auto;
+    width: 150px;
+    height: 150px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10; 
+}
+
+.transparent img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 10px;
+}
+
+#transparent1 {
+    margin-left: 200px;
+}
+
+#transparent3 {
+    margin-left: 100px;
+}
+
+#transparent5 {
+    margin-left: 50px;
+}
+
+#transparent4 {
+    margin-right: 50px;
+}
+
+#transparent4 {
+    margin-right: 100px;
+}
+
+#transparent6 {
+    margin-right: 175px;
+}
+
+.fruits-col img.selected {
+    border: 3px dotted rgb(0, 182, 0);
+  }
+  
+  .fruits-col img.grayscale {
+    filter: grayscale(100%);
+  }
+  
+  .cloned-fruit {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .fruits-col img.selected {
+    border: 5px dashed #0f0;
+  }
+  
+  .fruits-col img.grayscale {
+    filter: grayscale(100%);
+  }
+  
+  .cloned-fruit {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .star {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: starAnimation 2s ease-in-out 1s;
+    z-index: 9999;
+  }
+  
+  @keyframes starAnimation {
+    0% {
+      transform: translate(-50%, -50%) scale(0) rotate(0deg); 
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.5) rotate(180deg); 
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(0) rotate(360deg); 
+    }
+  }
+  
+.filled {
+    animation: splash 0.2s ease-out; 
+  }
+  
+  @keyframes splash {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .overlay-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998; 
+    display: none; 
+}
+
+.star-displayed .overlay-layer {
+    display: block; 
+}
+
+  
+  
+  
