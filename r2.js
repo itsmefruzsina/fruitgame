@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
   // fruit selection
   function selectFruit(element) {
     if (element === selectedFruit) {
+      element.classList.toggle('selected');
       if (!element.classList.contains('selected')) {
+        
         element.classList.remove('grayscale');
         element.classList.remove('selected');
         selectedFruit = null;
@@ -16,13 +18,13 @@ document.addEventListener("DOMContentLoaded", function() {
         selectedFruit.classList.remove('selected');
         selectedFruit.classList.remove('grayscale');
       }
-  
+
       if (!element.classList.contains('grayscale')) {
         element.classList.add('selected');
         selectedFruit = element;
       }
     }
-  
+
     checkGreyscaleFruits();
   }
 
@@ -63,8 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
           nextTransparent.src = selectedFruitSrc;
           nextTransparent.classList.add('filled');
         }
-  
-        // eset 
+        // reset
         transparent.classList.remove('selected');
         selectedFruit.classList.add('grayscale');
         selectedFruit.classList.remove('selected');
@@ -73,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
         checkGreyscaleFruits();
       }
     } else {
-      console.error("Element '" + clickId + "' not found.");
+      console.error("Element with ID '" + clickId + "' not found.");
     }
   };
   
@@ -91,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+
   // congrats star with darker overlay
   function showStar() {
     if (!starDisplayed) {
@@ -99,12 +101,12 @@ document.addEventListener("DOMContentLoaded", function() {
       starElement.classList.add('star');
       document.body.appendChild(starElement);
 
-    let overlayLayer = document.createElement('div');
-    overlayLayer.classList.add('overlay-layer');
-    document.body.appendChild(overlayLayer);
+      let overlayLayer = document.createElement('div');
+      overlayLayer.classList.add('overlay-layer');
+      document.body.appendChild(overlayLayer);
 
-    document.body.classList.add('star-displayed');
-    }
+      document.body.classList.add('star-displayed');
+      }
   }
 
   // random fruit group images
@@ -121,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function() {
       "images/cherry_group.png"
   ];
 
-  // to get random fruit images
+  // to get random fruits
   function randomImage() {
     let allFruits = document.querySelectorAll('.fruits-col img');
     let usedIndexes = [];
